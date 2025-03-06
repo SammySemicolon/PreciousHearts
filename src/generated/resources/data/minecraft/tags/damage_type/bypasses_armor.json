@@ -1,0 +1,7 @@
+{
+  "remove": [
+    "minecraft:wither",
+    "minecraft:magic"
+  ],
+  "values": []
+}
