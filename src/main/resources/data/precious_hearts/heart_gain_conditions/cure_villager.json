@@ -1,0 +1,5 @@
+{
+  "id": "precious_hearts:cure_villager",
+  "type" : "precious_hearts:meet_criteria",
+  "advancementId" : "minecraft:story/cure_zombie_villager"
+}

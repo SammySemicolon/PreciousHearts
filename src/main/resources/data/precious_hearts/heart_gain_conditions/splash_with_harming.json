@@ -1,0 +1,6 @@
+{
+  "id": "precious_hearts:splash_with_harming",
+  "type" : "precious_hearts:splash_potion",
+  "effect" : "minecraft:regeneration",
+  "amplifier" : 1
+}

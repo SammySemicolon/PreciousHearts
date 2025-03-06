@@ -1,5 +1,0 @@
-{
-  "death.attack.magic_mob": "%1$s was slain by %2$s",
-  "death.attack.magic_mob.item": "%1$s was slain by %2$s using %3$s",
-  "effect.magic_magic_damage.armor_corrosion": "Armor Corrosion"
-}

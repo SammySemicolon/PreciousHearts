@@ -1,0 +1,5 @@
+{
+  "id": "precious_hearts:kill_ravager",
+  "type" : "precious_hearts:kill_mob",
+  "entity" : "minecraft:ravager"
+}

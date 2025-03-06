@@ -1,0 +1,5 @@
+{
+  "id": "precious_hearts:return_to_sender",
+  "type" : "precious_hearts:meet_criteria",
+  "advancementId" : "minecraft:nether/return_to_sender"
+}

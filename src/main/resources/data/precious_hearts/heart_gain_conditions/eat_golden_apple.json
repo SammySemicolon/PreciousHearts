@@ -1,0 +1,5 @@
+{
+  "id": "precious_hearts:eat_golden_apple",
+  "type" : "precious_hearts:eat_item",
+  "item" : "minecraft:enchanted_golden_apple"
+}

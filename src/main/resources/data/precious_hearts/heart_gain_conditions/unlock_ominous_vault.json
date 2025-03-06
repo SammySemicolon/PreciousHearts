@@ -1,0 +1,5 @@
+{
+  "id": "precious_hearts:unlock_ominous_vault",
+  "type" : "precious_hearts:meet_criteria",
+  "advancementId" : "minecraft:adventure/revaulting"
+}
