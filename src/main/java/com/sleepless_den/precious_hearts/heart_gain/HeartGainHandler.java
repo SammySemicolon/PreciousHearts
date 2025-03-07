@@ -23,14 +23,14 @@ public class HeartGainHandler {
         attribute.setBaseValue(CommonConfig.HEART_BASE_AMOUNT.getConfigValue());
     }
 
-    public static void updateHealth(ServerPlayer player, PreciousHeartsPlayerData data) {
+    public static void updateHealth(ServerPlayer player, HeartGainPlayerData data) {
         var attribute = player.getAttribute(Attributes.MAX_HEALTH);
         var modifier = new AttributeModifier(PreciousHeartsMod.PRECIOUS_HEARTS_MODIFIER, data.getHeartModifier(), AttributeModifier.Operation.ADD_VALUE);
         attribute.addOrReplacePermanentModifier(modifier);
     }
 
     public static void removeHealth(ServerPlayer player) {
-        var data = player.getData(AttachmentTypeRegistry.PRECIOUS_HEARTS_DATA);
+        var data = player.getData(PreciousHeartsAttachmentTypes.HEART_GAIN_DATA);
         if (data.removeMostRecentHeartModifier(player)) {
             int randomId = player.getRandom().nextInt(39);
             player.displayClientMessage(Component.translatable("message.precious_hearts.drain." + randomId, player.getDisplayName()).withStyle(ChatFormatting.DARK_RED), false);
@@ -39,7 +39,7 @@ public class HeartGainHandler {
     }
 
     public static void addHealth(ServerPlayer player, HeartGainAdvancement<?> advancement) {
-        var data = player.getData(AttachmentTypeRegistry.PRECIOUS_HEARTS_DATA);
+        var data = player.getData(PreciousHeartsAttachmentTypes.HEART_GAIN_DATA);
 
         if (data.tryAddHeartModifier(player, advancement)) {
             int randomId = player.getRandom().nextInt(9);

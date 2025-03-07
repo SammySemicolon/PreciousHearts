@@ -1,30 +1,28 @@
-package com.sleepless_den.precious_hearts;
+package com.sleepless_den.precious_hearts.heart_gain;
 
 import com.mojang.serialization.*;
 import com.mojang.serialization.codecs.*;
 import com.sleepless_den.precious_hearts.config.*;
-import com.sleepless_den.precious_hearts.heart_gain.*;
-import com.sleepless_den.precious_hearts.heart_gain.conditions.*;
 import net.minecraft.resources.*;
 import net.minecraft.server.level.*;
 import net.minecraft.world.entity.ai.attributes.*;
 
 import java.util.*;
 
-public class PreciousHeartsPlayerData {
+public class HeartGainPlayerData {
 
-    public static Codec<PreciousHeartsPlayerData> CODEC = RecordCodecBuilder.create(obj -> obj.group(
+    public static Codec<HeartGainPlayerData> CODEC = RecordCodecBuilder.create(obj -> obj.group(
             Codec.INT.fieldOf("heartModifier").forGetter(c -> c.heartModifier),
             ResourceLocation.CODEC.listOf().fieldOf("heartSources").forGetter(c -> c.heartSources)
-    ).apply(obj, PreciousHeartsPlayerData::new));
+    ).apply(obj, HeartGainPlayerData::new));
 
     private int heartModifier;
     private final List<ResourceLocation> heartSources = new ArrayList<>();
 
-    public PreciousHeartsPlayerData() {
+    public HeartGainPlayerData() {
     }
 
-    public PreciousHeartsPlayerData(int heartModifier, List<ResourceLocation> heartSources) {
+    public HeartGainPlayerData(int heartModifier, List<ResourceLocation> heartSources) {
         this.heartModifier = heartModifier;
     }
 

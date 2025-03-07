@@ -1,0 +1,5 @@
+{
+  "id": "precious_hearts:eat_poisonous_potato",
+  "type" : "precious_hearts:eat_item",
+  "item" : "minecraft:poisonous_potato"
+}

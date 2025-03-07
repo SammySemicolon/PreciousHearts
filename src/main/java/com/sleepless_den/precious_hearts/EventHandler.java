@@ -1,5 +1,6 @@
 package com.sleepless_den.precious_hearts;
 
+import com.sleepless_den.precious_hearts.death_absorption.*;
 import com.sleepless_den.precious_hearts.heart_gain.*;
 import com.sleepless_den.precious_hearts.reload_listener.*;
 import net.minecraft.server.level.*;
@@ -10,6 +11,7 @@ import net.neoforged.neoforge.event.*;
 import net.neoforged.neoforge.event.entity.*;
 import net.neoforged.neoforge.event.entity.living.*;
 import net.neoforged.neoforge.event.entity.player.*;
+import net.neoforged.neoforge.event.level.*;
 
 @EventBusSubscriber
 public class EventHandler {
@@ -20,9 +22,17 @@ public class EventHandler {
     }
 
     @SubscribeEvent
+    public static void sleep(CanContinueSleepingEvent event) {
+
+    }
+    @SubscribeEvent
     public static void kill(LivingDeathEvent event) {
         if (event.getSource().getEntity() instanceof ServerPlayer player) {
             HeartGainHandler.rewardEntityKill(player, event.getEntity());
+            if (DeathAbsorptionHandler.preventDeath(player)) {
+                player.setHealth(1);
+                event.setCanceled(true);
+            }
         }
     }
 

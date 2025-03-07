@@ -1,0 +1,5 @@
+{
+  "id": "precious_hearts:eat_pufferfish",
+  "type" : "precious_hearts:eat_item",
+  "item" : "minecraft:pufferfish"
+}

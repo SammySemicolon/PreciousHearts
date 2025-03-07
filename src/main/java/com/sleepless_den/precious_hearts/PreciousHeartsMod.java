@@ -11,7 +11,7 @@ import com.mojang.logging.LogUtils;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 
-import static com.sleepless_den.precious_hearts.registry.AttachmentTypeRegistry.ATTACHMENT_TYPES;
+import static com.sleepless_den.precious_hearts.registry.PreciousHeartsAttachmentTypes.ATTACHMENT_TYPES;
 import static com.sleepless_den.precious_hearts.registry.HeartGainConditionRegistry.CONDITIONS;
 
 @Mod(PreciousHeartsMod.PRECIOUS_HEARTS)
