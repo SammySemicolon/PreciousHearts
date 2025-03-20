@@ -13,6 +13,7 @@ import net.neoforged.fml.common.Mod;
 
 import static com.sleepless_den.precious_hearts.registry.PreciousHeartsAttachmentTypes.ATTACHMENT_TYPES;
 import static com.sleepless_den.precious_hearts.registry.HeartGainConditionRegistry.CONDITIONS;
+import static com.sleepless_den.precious_hearts.registry.PreciousHeartsAttributes.ATTRIBUTES;
 
 @Mod(PreciousHeartsMod.PRECIOUS_HEARTS)
 public class PreciousHeartsMod
@@ -26,6 +27,7 @@ public class PreciousHeartsMod
         ModLoadingContext.get().getActiveContainer().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC);
 
         ATTACHMENT_TYPES.register(modEventBus);
+        ATTRIBUTES.register(modEventBus);
         CONDITIONS.register(modEventBus);
 
     }

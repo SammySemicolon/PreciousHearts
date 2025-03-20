@@ -24,6 +24,7 @@ public class HeartGainPlayerData {
 
     public HeartGainPlayerData(int heartModifier, List<ResourceLocation> heartSources) {
         this.heartModifier = heartModifier;
+        this.heartSources.addAll(heartSources);
     }
 
     public int getHeartModifier() {

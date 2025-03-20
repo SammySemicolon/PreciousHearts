@@ -22,7 +22,7 @@ public class DeathAbsorptionData {
     public DeathAbsorptionData() {
     }
 
-    public DeathAbsorptionData(int  deathAbsorption) {
+    public DeathAbsorptionData(int deathAbsorption) {
         this.deathAbsorption = deathAbsorption;
     }
 
@@ -44,10 +44,10 @@ public class DeathAbsorptionData {
 
     public void setDeathAbsorption(int deathAbsorption) {
         this.deathAbsorption = Math.max(deathAbsorption, 0);
-        isDirty = true;
+        setDirty(true);
     }
 
-    public double getDeathAbsorption() {
+    public int getDeathAbsorption() {
         return deathAbsorption;
     }
 

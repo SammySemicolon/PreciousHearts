@@ -33,7 +33,9 @@ public class HeartGainHandler {
         var data = player.getData(PreciousHeartsAttachmentTypes.HEART_GAIN_DATA);
         if (data.removeMostRecentHeartModifier(player)) {
             int randomId = player.getRandom().nextInt(39);
-            player.displayClientMessage(Component.translatable("message.precious_hearts.drain." + randomId, player.getDisplayName()).withStyle(ChatFormatting.DARK_RED), false);
+            for (ServerPlayer otherPlayer : player.getServer().getPlayerList().getPlayers()) {
+                otherPlayer.displayClientMessage(Component.translatable("message.precious_hearts.drain." + randomId, player.getDisplayName()).withStyle(ChatFormatting.DARK_RED), false);
+            }
         }
         updateHealth(player, data);
     }
@@ -43,7 +45,9 @@ public class HeartGainHandler {
 
         if (data.tryAddHeartModifier(player, advancement)) {
             int randomId = player.getRandom().nextInt(9);
-            player.displayClientMessage(Component.translatable("message.precious_hearts.gain." + randomId, player.getDisplayName()).withStyle(ChatFormatting.GREEN), false);
+            for (ServerPlayer otherPlayer : player.getServer().getPlayerList().getPlayers()) {
+                otherPlayer.displayClientMessage(Component.translatable("message.precious_hearts.gain." + randomId, player.getDisplayName()).withStyle(ChatFormatting.GREEN), false);
+            }
         }
         updateHealth(player, data);
     }
